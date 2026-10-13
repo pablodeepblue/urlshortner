@@ -1,0 +1,13 @@
+services:
+  web:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE: /data/urls.db
+    volumes:
+      - urls_data:/data
+    restart: unless-stopped
+
+volumes:
+  urls_data:
